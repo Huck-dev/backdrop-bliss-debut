@@ -22,7 +22,7 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-slate-900/95 via-slate-800/95 to-slate-900/95 backdrop-blur-sm border-b border-slate-700/50">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-14">
           {/* Logo */}
@@ -40,7 +40,7 @@ const Header = () => {
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="text-slate-700 hover:text-slate-900 font-medium transition-colors"
+                className="text-slate-200 hover:text-white font-medium transition-colors"
               >
                 {item.name}
               </button>
@@ -51,7 +51,7 @@ const Header = () => {
           <div className="hidden md:block">
             <Button 
               onClick={() => scrollToSection('#contact')}
-              className="bg-slate-900 hover:bg-slate-800"
+              className="bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-sm"
               size="sm"
             >
               Get Quote
@@ -64,22 +64,22 @@ const Header = () => {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? (
-              <X className="h-6 w-6 text-slate-700" />
+              <X className="h-6 w-6 text-slate-200" />
             ) : (
-              <Menu className="h-6 w-6 text-slate-700" />
+              <Menu className="h-6 w-6 text-slate-200" />
             )}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden border-t bg-white">
+          <div className="md:hidden border-t border-slate-700/50 bg-slate-900/95 backdrop-blur-sm">
             <nav className="py-4 space-y-2">
               {navItems.map((item) => (
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className="block w-full text-left px-4 py-2 text-slate-700 hover:text-slate-900 hover:bg-slate-50 transition-colors"
+                  className="block w-full text-left px-4 py-2 text-slate-200 hover:text-white hover:bg-white/10 transition-colors"
                 >
                   {item.name}
                 </button>
@@ -87,7 +87,7 @@ const Header = () => {
               <div className="px-4 pt-2">
                 <Button 
                   onClick={() => scrollToSection('#contact')}
-                  className="w-full bg-slate-900 hover:bg-slate-800"
+                  className="w-full bg-white/10 hover:bg-white/20 text-white border border-white/20"
                 >
                   Get Quote
                 </Button>
