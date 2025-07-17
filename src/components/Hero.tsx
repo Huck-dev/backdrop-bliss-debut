@@ -19,17 +19,8 @@ const Hero = () => {
       
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
-        {/* Main Logo */}
-        <div className="mb-8 animate-fade-in">
-          <img 
-            src="/lovable-uploads/db063a9f-c363-4ce9-ba3d-8b0274dc53f5.png" 
-            alt="Exotic Hauls - Specialized Auto Transport" 
-            className="w-full max-w-2xl h-auto mx-auto"
-          />
-        </div>
-        
         {/* Hero Text */}
-        <div className="space-y-6 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+        <div className="space-y-6 animate-fade-in">
           <h1 className="text-4xl md:text-6xl font-bold leading-tight">
             Premium Auto Transport
             <span className="block text-2xl md:text-3xl font-light text-slate-300 mt-2">
