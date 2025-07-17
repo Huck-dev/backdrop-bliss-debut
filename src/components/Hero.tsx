@@ -13,12 +13,12 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <section className="relative min-h-screen flex items-end justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 pb-32">
       {/* Background Logo with Parallax */}
       <div 
-        className="absolute inset-0 flex items-center justify-center opacity-30"
+        className="absolute inset-0 flex items-start justify-center pt-16 opacity-30"
         style={{ 
-          transform: `translateY(${scrollY * 0.5}px) scale(1.2)`,
+          transform: `translateY(${scrollY * 0.5}px)`,
         }}
       >
         <img 
