@@ -16,7 +16,7 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-end justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 pb-32">
       {/* Background Logo with Parallax and Fade Effect */}
       <div 
-        className="absolute top-0 left-0 right-0 h-1/2 flex items-center justify-center"
+        className="absolute inset-0 flex items-center justify-center"
         style={{ 
           transform: `translateY(${scrollY * 0.5}px)`,
         }}
@@ -25,7 +25,7 @@ const Hero = () => {
           <img 
             src="/lovable-uploads/db063a9f-c363-4ce9-ba3d-8b0274dc53f5.png" 
             alt="Exotic Hauls Logo" 
-            className="w-full h-auto object-contain opacity-40"
+            className="w-full h-auto object-contain opacity-40 mx-auto"
           />
           {/* Gradient overlay to fade edges into background */}
           <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-transparent to-slate-900/80"></div>
