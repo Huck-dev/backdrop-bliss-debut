@@ -16,7 +16,7 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-end justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 pb-32">
       {/* Background Logo with Parallax */}
       <div 
-        className="absolute inset-0 flex items-start justify-center pt-16 opacity-30"
+        className="absolute inset-0 flex items-start justify-center pt-4 opacity-30"
         style={{ 
           transform: `translateY(${scrollY * 0.5}px)`,
         }}
@@ -24,7 +24,7 @@ const Hero = () => {
         <img 
           src="/lovable-uploads/db063a9f-c363-4ce9-ba3d-8b0274dc53f5.png" 
           alt="Exotic Hauls Logo" 
-          className="w-full max-w-4xl h-auto object-contain"
+          className="w-full max-w-2xl h-auto object-contain"
         />
       </div>
       
