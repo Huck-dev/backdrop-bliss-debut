@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Phone, Mail } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const Hero = () => {
@@ -38,48 +38,14 @@ const Hero = () => {
       
       {/* Content - positioned in lower portion */}
       <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
-        {/* Hero Text */}
-        <div className="space-y-6 animate-fade-in">
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-            Premium Auto Transport
-            <span className="block text-2xl md:text-3xl font-light text-slate-300 mt-2">
-              Where Luxury Meets Reliability
-            </span>
-          </h1>
-          
-          <p className="text-lg md:text-xl text-slate-200 max-w-3xl mx-auto leading-relaxed">
-            From exotic supercars to classic collectibles, we provide white-glove auto transport services 
-            with unmatched care and precision. Your vehicle deserves the extraordinary.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">
-            <Button 
-              size="lg" 
-              className="bg-white text-slate-900 hover:bg-slate-100 px-8 py-3 text-lg font-semibold transition-all duration-300 hover:scale-105"
-            >
-              Get Quote <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            
-            <div className="flex gap-4">
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="border-white text-white hover:bg-white hover:text-slate-900 px-6 py-3 transition-all duration-300"
-              >
-                <Phone className="mr-2 h-5 w-5" />
-                Call Now
-              </Button>
-              
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="border-white text-white hover:bg-white hover:text-slate-900 px-6 py-3 transition-all duration-300"
-              >
-                <Mail className="mr-2 h-5 w-5" />
-                Email Us
-              </Button>
-            </div>
-          </div>
+        {/* Get Quote Button */}
+        <div className="animate-fade-in">
+          <Button 
+            size="lg" 
+            className="bg-white text-slate-900 hover:bg-slate-100 px-8 py-3 text-lg font-semibold transition-all duration-300 hover:scale-105"
+          >
+            Get Quote <ArrowRight className="ml-2 h-5 w-5" />
+          </Button>
         </div>
       </div>
       
