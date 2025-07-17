@@ -14,9 +14,9 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-end justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 pb-32">
-      {/* Background Logo with Parallax - positioned in upper portion */}
+      {/* Background Logo with Parallax - fills entire background */}
       <div 
-        className="absolute top-0 left-0 right-0 h-1/2 flex items-center justify-center opacity-30"
+        className="absolute inset-0 flex items-start justify-center pt-16 opacity-30"
         style={{ 
           transform: `translateY(${scrollY * 0.5}px)`,
         }}
