@@ -24,13 +24,13 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-14">
           {/* Logo */}
           <div className="flex-shrink-0">
             <img 
               src="/lovable-uploads/db063a9f-c363-4ce9-ba3d-8b0274dc53f5.png" 
               alt="Exotic Hauls" 
-              className="h-10 w-auto"
+              className="h-8 w-auto"
             />
           </div>
 
@@ -52,6 +52,7 @@ const Header = () => {
             <Button 
               onClick={() => scrollToSection('#contact')}
               className="bg-slate-900 hover:bg-slate-800"
+              size="sm"
             >
               Get Quote
             </Button>
