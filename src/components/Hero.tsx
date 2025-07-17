@@ -16,9 +16,9 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       {/* Background Logo with Parallax */}
       <div 
-        className="absolute inset-0 flex items-center justify-center opacity-30"
+        className="absolute top-0 left-1/2 transform -translate-x-1/2 opacity-30"
         style={{ 
-          transform: `translateY(${scrollY * 0.5}px) scale(1.2)`,
+          transform: `translateX(-50%) translateY(${scrollY * 0.5}px) scale(1.2)`,
         }}
       >
         <img 
