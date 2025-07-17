@@ -1,21 +1,35 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone, Mail } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const Hero = () => {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Background Logo */}
-      <div className="absolute inset-0 flex items-center justify-center opacity-10">
+      {/* Background Logo with Parallax */}
+      <div 
+        className="absolute inset-0 flex items-center justify-center opacity-30"
+        style={{ 
+          transform: `translateY(${scrollY * 0.5}px) scale(1.2)`,
+        }}
+      >
         <img 
           src="/lovable-uploads/db063a9f-c363-4ce9-ba3d-8b0274dc53f5.png" 
           alt="Exotic Hauls Logo" 
-          className="w-full max-w-4xl h-auto object-contain scale-150"
+          className="w-full max-w-4xl h-auto object-contain"
         />
       </div>
       
       {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-black/40"></div>
+      <div className="absolute inset-0 bg-black/20"></div>
       
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
