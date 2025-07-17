@@ -14,7 +14,7 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-end justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 pb-32">
-      {/* Background Logo with Parallax and Fade Effect */}
+      {/* Background Logo with Extensive Feathering */}
       <div 
         className="absolute top-0 left-0 right-0 h-1/2 flex items-center justify-center"
         style={{ 
@@ -27,9 +27,26 @@ const Hero = () => {
             alt="Exotic Hauls Logo" 
             className="w-full h-auto object-contain opacity-40"
           />
-          {/* Gradient overlay to fade edges into background */}
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-transparent to-slate-900/80"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-transparent to-slate-900/90"></div>
+          {/* Multiple overlapping gradient layers for seamless blending */}
+          
+          {/* Primary edge feathering - very aggressive */}
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/40 via-transparent via-transparent via-slate-900/40 to-slate-900"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-900/40 via-transparent via-transparent via-slate-900/40 to-slate-900"></div>
+          
+          {/* Secondary diagonal feathering */}
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-900/30 via-transparent via-transparent via-slate-900/30 to-slate-900"></div>
+          <div className="absolute inset-0 bg-gradient-to-bl from-slate-900 via-slate-900/30 via-transparent via-transparent via-slate-900/30 to-slate-900"></div>
+          
+          {/* Tertiary corner feathering */}
+          <div className="absolute inset-0 bg-gradient-to-tl from-slate-900/60 via-transparent to-slate-900/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-tr from-slate-900/60 via-transparent to-slate-900/60"></div>
+          
+          {/* Ultra-soft edge blending */}
+          <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-slate-900/80"></div>
+          
+          {/* Final comprehensive overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/20 via-transparent via-transparent via-slate-900/20 to-slate-900/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/95 via-slate-900/30 via-transparent via-transparent via-slate-900/30 to-slate-900/95"></div>
         </div>
       </div>
       
