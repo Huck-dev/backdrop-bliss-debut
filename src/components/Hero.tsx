@@ -13,10 +13,10 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-end justify-center overflow-hidden bg-gradient-to-br from-gray-800 via-gray-700 to-gray-900 pb-32">
-      {/* Background Logo with Parallax - positioned in upper portion */}
+    <section className="relative min-h-screen flex items-end justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 pb-32">
+      {/* Background Logo with Parallax */}
       <div 
-        className="absolute top-0 left-0 right-0 h-1/2 flex items-center justify-center opacity-90"
+        className="absolute inset-0 flex items-center justify-center opacity-30"
         style={{ 
           transform: `translateY(${scrollY * 0.5}px)`,
         }}
@@ -29,9 +29,9 @@ const Hero = () => {
       </div>
       
       {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-black/10"></div>
+      <div className="absolute inset-0 bg-black/20"></div>
       
-      {/* Content - positioned in lower portion */}
+      {/* Content */}
       <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
         {/* Hero Text */}
         <div className="space-y-6 animate-fade-in">
