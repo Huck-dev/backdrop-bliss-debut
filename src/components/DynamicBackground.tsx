@@ -21,21 +21,21 @@ const DynamicBackground = () => {
       {/* Consistent dark background */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700" />
       
-      {/* Background logo with parallax effect */}
+      {/* Background logo with parallax effect - positioned higher */}
       <div 
-        className="absolute inset-0 flex items-center justify-center opacity-20"
+        className="absolute inset-0 flex items-start justify-center opacity-10 pt-20"
         style={{ 
           transform: `translateY(${scrollY * 0.2}px)`,
         }}
       >
-        <div className="relative w-full max-w-4xl h-auto">
+        <div className="relative w-full max-w-3xl h-auto">
           <img 
             src="/lovable-uploads/db063a9f-c363-4ce9-ba3d-8b0274dc53f5.png" 
             alt="Exotic Hauls Logo" 
             className="w-full h-auto object-contain mx-auto"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/20"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/30"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/30"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40"></div>
         </div>
       </div>
     </div>
