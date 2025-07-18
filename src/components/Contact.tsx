@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -66,7 +65,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <div className="font-semibold text-white">Call Us</div>
-                    <div className="text-slate-300">(555) 123-HAUL</div>
+                    <div className="text-slate-300">(800) 123-HAUL</div>
                   </div>
                 </div>
                 
@@ -76,7 +75,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <div className="font-semibold text-white">Email Us</div>
-                    <div className="text-slate-300">info@exotichauls.com</div>
+                    <div className="text-slate-300">info@exotichauls.ca</div>
                   </div>
                 </div>
                 
@@ -86,7 +85,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <div className="font-semibold text-white">Service Area</div>
-                    <div className="text-slate-300">Nationwide Coverage</div>
+                    <div className="text-slate-300">Canada-Wide Coverage</div>
                   </div>
                 </div>
                 
