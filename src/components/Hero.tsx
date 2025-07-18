@@ -1,20 +1,14 @@
 
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import QuoteForm from "./QuoteForm";
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-end justify-center overflow-hidden pb-32">
       {/* Content - positioned in lower portion */}
-      <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
-        {/* Get Quote Button */}
+      <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto">
+        {/* Quote Form */}
         <div className="animate-fade-in">
-          <Button 
-            size="lg" 
-            className="bg-white text-slate-900 hover:bg-slate-100 px-8 py-3 text-lg font-semibold transition-all duration-300 hover:scale-105"
-          >
-            Get Quote <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
+          <QuoteForm />
         </div>
       </div>
       
