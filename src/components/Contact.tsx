@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -106,7 +107,8 @@ const Contact = () => {
                 <h3 className="text-xl font-bold text-white mb-3">Emergency Transport?</h3>
                 <p className="text-slate-300 mb-4">Need immediate assistance or have an urgent transport request?</p>
                 <Button 
-                  className="bg-red-600 text-white hover:bg-red-700 w-full transition-all duration-300 border-0"
+                  variant="outline" 
+                  className="border-white text-white hover:bg-white hover:text-slate-900 w-full transition-all duration-300"
                 >
                   Emergency Hotline
                 </Button>
