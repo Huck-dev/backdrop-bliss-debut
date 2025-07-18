@@ -27,7 +27,7 @@ const Services = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-white">
+    <section className="py-20 px-4 bg-transparent">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
@@ -42,7 +42,7 @@ const Services = () => {
           {services.map((service, index) => (
             <Card 
               key={index} 
-              className="hover:shadow-xl transition-all duration-300 hover:scale-105 border-0 shadow-lg"
+              className="hover:shadow-xl transition-all duration-300 hover:scale-105 border-0 shadow-lg bg-white/80 backdrop-blur-sm"
             >
               <CardHeader className="text-center pb-4">
                 <div className="w-16 h-16 bg-slate-900 rounded-full flex items-center justify-center mx-auto mb-4">

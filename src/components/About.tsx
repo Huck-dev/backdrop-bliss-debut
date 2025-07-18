@@ -11,7 +11,7 @@ const About = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-slate-50">
+    <section className="py-20 px-4 bg-transparent">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
@@ -57,7 +57,7 @@ const About = () => {
             {stats.map((stat, index) => (
               <div 
                 key={index} 
-                className="text-center p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+                className="text-center p-8 bg-white/80 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
               >
                 <div className="w-16 h-16 bg-slate-900 rounded-full flex items-center justify-center mx-auto mb-4">
                   <stat.icon className="w-8 h-8 text-white" />
