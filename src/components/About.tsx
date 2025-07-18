@@ -77,8 +77,8 @@ const About = () => {
               </p>
               
               <p className="text-lg text-slate-300 leading-relaxed">
-                For customer reviews and testimonials, please check out our Google reviews, where we maintain our 
-                commitment to excellence through consistently outstanding service.
+                Contact us today to experience the Exotic Hauls difference and see why we're becoming Canada's trusted 
+                choice for luxury vehicle transport.
               </p>
             </div>
             
@@ -86,15 +86,22 @@ const About = () => {
               <Button 
                 size="lg" 
                 className="bg-white text-slate-900 hover:bg-slate-100 px-8 py-3 text-lg transition-all duration-300 hover:scale-105"
+                onClick={() => {
+                  const contactElement = document.querySelector('#contact');
+                  if (contactElement) {
+                    contactElement.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
               >
-                View Google Reviews
+                Get Your Quote
               </Button>
               <Button 
                 size="lg" 
                 variant="outline"
                 className="border-white text-white hover:bg-white hover:text-slate-900 px-8 py-3 text-lg transition-all duration-300"
+                onClick={() => window.open('https://instagram.com/exotic_hauls', '_blank')}
               >
-                Get Your Quote
+                Follow on Instagram
               </Button>
             </div>
           </div>

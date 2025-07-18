@@ -1,8 +1,9 @@
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Instagram } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -65,7 +66,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <div className="font-semibold text-white">Call Us</div>
-                    <div className="text-slate-300">(800) 123-HAUL</div>
+                    <div className="text-slate-300">(403) 820-1167</div>
                   </div>
                 </div>
                 
@@ -75,7 +76,17 @@ const Contact = () => {
                   </div>
                   <div>
                     <div className="font-semibold text-white">Email Us</div>
-                    <div className="text-slate-300">info@exotichauls.ca</div>
+                    <div className="text-slate-300">exotichaul@gmail.com</div>
+                  </div>
+                </div>
+                
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
+                    <Instagram className="w-6 h-6 text-slate-900" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-white">Follow Us</div>
+                    <div className="text-slate-300">@exotic_hauls</div>
                   </div>
                 </div>
                 
