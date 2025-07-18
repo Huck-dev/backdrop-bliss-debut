@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import About from "@/components/About";
+import Gallery from "@/components/Gallery";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
@@ -22,6 +23,9 @@ const Index = () => {
       </section>
       <section id="about">
         <About />
+      </section>
+      <section id="gallery">
+        <Gallery />
       </section>
       <section id="testimonials">
         <Testimonials />
