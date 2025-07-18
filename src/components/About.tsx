@@ -17,14 +17,14 @@ const About = () => {
           {/* Content */}
           <div className="space-y-8">
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Why Choose Exotic Hauls?
               </h2>
-              <p className="text-lg text-slate-600 leading-relaxed mb-6">
+              <p className="text-lg text-slate-300 leading-relaxed mb-6">
                 With over a decade of experience in specialized auto transport, we understand that your 
                 vehicle isn't just transportation—it's an investment, a passion, and often a piece of art.
               </p>
-              <p className="text-lg text-slate-600 leading-relaxed">
+              <p className="text-lg text-slate-300 leading-relaxed">
                 Our team of certified professionals uses state-of-the-art equipment and proven methods 
                 to ensure your vehicle arrives in pristine condition, exactly as it was when it left your hands.
               </p>
@@ -38,15 +38,15 @@ const About = () => {
                 "24/7 customer support and communication"
               ].map((feature, index) => (
                 <div key={index} className="flex items-center space-x-3">
-                  <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0" />
-                  <span className="text-slate-700 text-lg">{feature}</span>
+                  <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0" />
+                  <span className="text-slate-200 text-lg">{feature}</span>
                 </div>
               ))}
             </div>
             
             <Button 
               size="lg" 
-              className="bg-slate-900 hover:bg-slate-800 px-8 py-3 text-lg transition-all duration-300 hover:scale-105"
+              className="bg-white text-slate-900 hover:bg-slate-100 px-8 py-3 text-lg transition-all duration-300 hover:scale-105"
             >
               Learn More About Us
             </Button>
@@ -57,13 +57,13 @@ const About = () => {
             {stats.map((stat, index) => (
               <div 
                 key={index} 
-                className="text-center p-8 bg-white/80 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+                className="text-center p-8 bg-slate-800/80 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
               >
-                <div className="w-16 h-16 bg-slate-900 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <stat.icon className="w-8 h-8 text-white" />
+                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
+                  <stat.icon className="w-8 h-8 text-slate-900" />
                 </div>
-                <div className="text-3xl font-bold text-slate-900 mb-2">{stat.number}</div>
-                <div className="text-slate-600 font-medium">{stat.label}</div>
+                <div className="text-3xl font-bold text-white mb-2">{stat.number}</div>
+                <div className="text-slate-300 font-medium">{stat.label}</div>
               </div>
             ))}
           </div>
