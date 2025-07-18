@@ -102,13 +102,12 @@ const Contact = () => {
               </CardContent>
             </Card>
             
-            <Card className="bg-gradient-to-br from-slate-700 to-slate-800 border-slate-600">
+            <Card className="bg-gradient-to-br from-red-600 to-red-700 border-red-500">
               <CardContent className="p-6 text-center">
                 <h3 className="text-xl font-bold text-white mb-3">Emergency Transport?</h3>
-                <p className="text-slate-300 mb-4">Need immediate assistance or have an urgent transport request?</p>
+                <p className="text-red-100 mb-4">Need immediate assistance or have an urgent transport request?</p>
                 <Button 
-                  variant="outline" 
-                  className="border-white text-white hover:bg-white hover:text-slate-900 w-full transition-all duration-300"
+                  className="bg-white text-red-600 hover:bg-red-50 w-full font-semibold transition-all duration-300"
                 >
                   Emergency Hotline
                 </Button>
