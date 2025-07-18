@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
@@ -55,6 +56,46 @@ const Gallery = () => {
       src: "/lovable-uploads/0ec65096-63ea-46db-afcc-52ca593c270e.png",
       alt: "Brown Lincoln Continental Town Car",
       title: "Luxury Vehicle Transport"
+    },
+    {
+      src: "/lovable-uploads/3ff36979-decd-4301-9dbf-90d3384a9dd7.png",
+      alt: "Classic Cutlass in enclosed trailer with professional tie-downs",
+      title: "Secure Classic Car Transport"
+    },
+    {
+      src: "/lovable-uploads/671a0d00-61bc-4adf-b38f-935dfcf7927f.png",
+      alt: "Classic Lincoln Continental with Exotic Hauls trailer",
+      title: "Premium Classic Vehicle Service"
+    },
+    {
+      src: "/lovable-uploads/1428e2d0-b837-46ff-8788-e61f28ae7dfc.png",
+      alt: "Ford Super Duty with Exotic Hauls trailer and vintage race car",
+      title: "Professional Racing Vehicle Transport"
+    },
+    {
+      src: "/lovable-uploads/6d603409-1a90-4f95-bdd8-614bcf277458.png",
+      alt: "Vintage race car #75 in garage facility",
+      title: "Historic Racing Car Transport"
+    },
+    {
+      src: "/lovable-uploads/1aa3cad8-7e05-43e7-a430-292db73cd633.png",
+      alt: "Blue Dodge Viper with white stripes in enclosed trailer",
+      title: "Supercar Transport Service"
+    },
+    {
+      src: "/lovable-uploads/39e4a890-c6e0-4aa2-a23a-e1b9c2e2eff6.png",
+      alt: "Black classic Chevrolet pickup truck in garage",
+      title: "Classic Truck Transport"
+    },
+    {
+      src: "/lovable-uploads/df48a8be-113f-431b-9cf6-9eea3451fe55.png",
+      alt: "Blue vintage race car #99 Daytona in enclosed trailer",
+      title: "Vintage Racing Vehicle Transport"
+    },
+    {
+      src: "/lovable-uploads/6a2e4fb4-34fa-469d-b760-fc70224cb71b.png",
+      alt: "Blue Dodge Viper GTS with white stripes at dealership",
+      title: "Exotic Sports Car Transport"
     }
   ];
 
@@ -91,29 +132,40 @@ const Gallery = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {images.map((image, index) => (
-            <div
-              key={index}
-              className="group relative overflow-hidden rounded-lg bg-slate-800/50 backdrop-blur-sm border border-slate-700 cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
-              onClick={() => openModal(index)}
-            >
-              <div className="aspect-[4/3] overflow-hidden">
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-4 left-4 right-4">
-                  <h3 className="text-white font-semibold text-lg mb-2">{image.title}</h3>
-                  <p className="text-slate-300 text-sm">{image.alt}</p>
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          className="w-full"
+        >
+          <CarouselContent className="-ml-2 md:-ml-4">
+            {images.map((image, index) => (
+              <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                <div
+                  className="group relative overflow-hidden rounded-lg bg-slate-800/50 backdrop-blur-sm border border-slate-700 cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+                  onClick={() => openModal(index)}
+                >
+                  <div className="aspect-[4/3] overflow-hidden">
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <h3 className="text-white font-semibold text-lg mb-2">{image.title}</h3>
+                      <p className="text-slate-300 text-sm">{image.alt}</p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          ))}
-        </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="hidden md:flex -left-4 bg-slate-700/80 border-slate-600 text-white hover:bg-slate-600/80" />
+          <CarouselNext className="hidden md:flex -right-4 bg-slate-700/80 border-slate-600 text-white hover:bg-slate-600/80" />
+        </Carousel>
       </div>
 
       {/* Modal */}
