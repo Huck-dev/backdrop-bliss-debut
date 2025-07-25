@@ -98,7 +98,7 @@ const About = () => {
               <Button 
                 size="lg" 
                 variant="outline"
-                className="border-white text-white hover:bg-white hover:text-slate-900 px-8 py-3 text-lg transition-all duration-300"
+                className="border-white bg-transparent text-white hover:bg-white hover:text-slate-900 px-8 py-3 text-lg transition-all duration-300"
                 onClick={() => window.open('https://instagram.com/exotic_hauls', '_blank')}
               >
                 Follow on Instagram
