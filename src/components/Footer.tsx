@@ -30,11 +30,36 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Services</h3>
             <ul className="space-y-2 text-slate-400">
-              <li className="hover:text-white cursor-pointer transition-colors">Enclosed Transport</li>
-              <li className="hover:text-white cursor-pointer transition-colors">Exotic Car Shipping</li>
-              <li className="hover:text-white cursor-pointer transition-colors">Classic Car Transport</li>
-              <li className="hover:text-white cursor-pointer transition-colors">Expedited Delivery</li>
-              <li className="hover:text-white cursor-pointer transition-colors">Door-to-Door Service</li>
+              <li 
+                className="hover:text-white cursor-pointer transition-colors"
+                onClick={() => document.querySelector('#services')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Enclosed Transport
+              </li>
+              <li 
+                className="hover:text-white cursor-pointer transition-colors"
+                onClick={() => document.querySelector('#services')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Exotic Car Shipping
+              </li>
+              <li 
+                className="hover:text-white cursor-pointer transition-colors"
+                onClick={() => document.querySelector('#services')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Classic Car Transport
+              </li>
+              <li 
+                className="hover:text-white cursor-pointer transition-colors"
+                onClick={() => document.querySelector('#services')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Expedited Delivery
+              </li>
+              <li 
+                className="hover:text-white cursor-pointer transition-colors"
+                onClick={() => document.querySelector('#services')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Door-to-Door Service
+              </li>
             </ul>
           </div>
           
@@ -42,11 +67,31 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Company</h3>
             <ul className="space-y-2 text-slate-400">
-              <li className="hover:text-white cursor-pointer transition-colors">About Us</li>
-              <li className="hover:text-white cursor-pointer transition-colors">Our Team</li>
+              <li 
+                className="hover:text-white cursor-pointer transition-colors"
+                onClick={() => document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                About Us
+              </li>
+              <li 
+                className="hover:text-white cursor-pointer transition-colors"
+                onClick={() => document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Our Team
+              </li>
               <li className="hover:text-white cursor-pointer transition-colors">Careers</li>
-              <li className="hover:text-white cursor-pointer transition-colors">Reviews</li>
-              <li className="hover:text-white cursor-pointer transition-colors">Contact</li>
+              <li 
+                className="hover:text-white cursor-pointer transition-colors"
+                onClick={() => document.querySelector('#testimonials')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Reviews
+              </li>
+              <li 
+                className="hover:text-white cursor-pointer transition-colors"
+                onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Contact
+              </li>
             </ul>
           </div>
         </div>
