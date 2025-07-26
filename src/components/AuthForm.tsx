@@ -14,6 +14,7 @@ interface AuthFormProps {
 const AuthForm = ({ onSuccess }: AuthFormProps) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isSignUp, setIsSignUp] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
@@ -23,10 +24,24 @@ const AuthForm = ({ onSuccess }: AuthFormProps) => {
     setIsLoading(true);
 
     try {
-      const { error } = await supabase.auth.signInWithPassword({
-        email,
-        password,
-      });
+      let result;
+      
+      if (isSignUp) {
+        result = await supabase.auth.signUp({
+          email,
+          password,
+          options: {
+            emailRedirectTo: `${window.location.origin}/admin`
+          }
+        });
+      } else {
+        result = await supabase.auth.signInWithPassword({
+          email,
+          password,
+        });
+      }
+
+      const { error } = result;
 
       if (error) {
         toast({
@@ -37,7 +52,7 @@ const AuthForm = ({ onSuccess }: AuthFormProps) => {
       } else {
         toast({
           title: "Success",
-          description: "Logged in successfully",
+          description: isSignUp ? "Account created successfully" : "Logged in successfully",
         });
         onSuccess();
       }
@@ -56,9 +71,11 @@ const AuthForm = ({ onSuccess }: AuthFormProps) => {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-4">
       <Card className="w-full max-w-md">
         <CardHeader className="text-center">
-          <CardTitle className="text-2xl font-bold">Admin Login</CardTitle>
+          <CardTitle className="text-2xl font-bold">
+            {isSignUp ? "Create Admin Account" : "Admin Login"}
+          </CardTitle>
           <CardDescription>
-            Access the Exotic Hauls admin panel
+            {isSignUp ? "Set up your admin account for Exotic Hauls" : "Access the Exotic Hauls admin panel"}
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -101,8 +118,17 @@ const AuthForm = ({ onSuccess }: AuthFormProps) => {
               </div>
             </div>
             <Button type="submit" className="w-full" disabled={isLoading}>
-              {isLoading ? "Signing in..." : "Sign In"}
+              {isLoading ? (isSignUp ? "Creating Account..." : "Signing in...") : (isSignUp ? "Create Account" : "Sign In")}
             </Button>
+            <div className="text-center mt-4">
+              <button
+                type="button"
+                onClick={() => setIsSignUp(!isSignUp)}
+                className="text-sm text-primary hover:underline"
+              >
+                {isSignUp ? "Already have an account? Sign in" : "Need to create an account? Sign up"}
+              </button>
+            </div>
           </form>
         </CardContent>
       </Card>
