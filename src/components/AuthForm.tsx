@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Label } from "@/components/ui/label";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
-import { Eye, EyeOff } from "lucide-react";
+import { Eye, EyeOff, Home } from "lucide-react";
 
 interface AuthFormProps {
   onSuccess: () => void;
@@ -54,6 +54,15 @@ const AuthForm = ({ onSuccess }: AuthFormProps) => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-4">
+      {/* Back to Home Button */}
+      <a
+        href="/"
+        className="absolute top-4 left-4 flex items-center gap-2 text-white hover:text-slate-300 transition-colors"
+      >
+        <Home className="w-5 h-5" />
+        <span>Back to Home</span>
+      </a>
+      
       <Card className="w-full max-w-md">
         <CardHeader className="text-center">
           <CardTitle className="text-2xl font-bold">Admin Login</CardTitle>

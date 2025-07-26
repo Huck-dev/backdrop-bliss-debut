@@ -3,7 +3,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
-import { LogOut, Settings, Users, HelpCircle, ImageIcon } from "lucide-react";
+import { LogOut, Settings, Users, HelpCircle, ImageIcon, Home } from "lucide-react";
 import TestimonialManager from "./admin/TestimonialManager";
 import FAQManager from "./admin/FAQManager";
 import GalleryManager from "./admin/GalleryManager";
@@ -52,14 +52,23 @@ const AdminPanel = ({ onLogout }: AdminPanelProps) => {
               <h1 className="text-2xl font-bold text-white">Exotic Hauls Admin</h1>
               <p className="text-slate-300 text-sm">Logged in as: {userEmail}</p>
             </div>
-            <Button 
-              onClick={handleLogout}
-              variant="outline"
-              className="border-slate-600 text-slate-300 hover:bg-slate-700"
-            >
-              <LogOut className="w-4 h-4 mr-2" />
-              Logout
-            </Button>
+            <div className="flex items-center gap-3">
+              <a
+                href="/"
+                className="flex items-center gap-2 px-3 py-2 text-slate-300 hover:text-white transition-colors border border-slate-600 rounded-md hover:bg-slate-700"
+              >
+                <Home className="w-4 h-4" />
+                <span>Home</span>
+              </a>
+              <Button 
+                onClick={handleLogout}
+                variant="outline"
+                className="border-slate-600 text-slate-300 hover:bg-slate-700"
+              >
+                <LogOut className="w-4 h-4 mr-2" />
+                Logout
+              </Button>
+            </div>
           </div>
         </div>
       </div>
