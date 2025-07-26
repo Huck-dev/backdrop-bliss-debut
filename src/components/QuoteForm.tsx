@@ -22,7 +22,9 @@ const QuoteForm = () => {
   const { toast } = useToast();
 
   const handleSubmit = async () => {
-    console.log('Quote form submitted');
+    console.log('=== QUOTE FORM SUBMIT START ===');
+    alert('Form submitted!');
+    console.log('Form data:', { pickupAddress, deliveryAddress, customerName, customerEmail });
     // Validate required fields
     if (!pickupAddress || !deliveryAddress || !customerName || !customerEmail) {
       console.log('Validation failed - missing required fields');
