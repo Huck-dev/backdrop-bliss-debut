@@ -18,7 +18,7 @@ const FAQ = () => {
     },
     {
       question: "Does Exotic Hauls offer insurance for vehicles being transported?",
-      answer: "We are fully insured for $200,000 Cargo. Insurance can be increased for more expensive vehicles on request."
+      answer: "We are fully insured for $200000 Cargo. Insurance can be increased for more expensive vehicles on request."
     }
   ];
 
