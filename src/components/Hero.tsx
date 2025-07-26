@@ -10,16 +10,9 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Content - centered */}
-      <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto">
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
-          Premium Auto Transport
-        </h1>
-        <p className="text-xl md:text-2xl mb-12 text-white/90 max-w-3xl mx-auto animate-fade-in">
-          Secure, reliable vehicle shipping across Canada with white-glove service for luxury and exotic cars
-        </p>
-        
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32">
+      {/* Content - centered with more space from top */}
+      <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto">        
         {/* Call to Action Button */}
         <div className="animate-fade-in">
           <Button
