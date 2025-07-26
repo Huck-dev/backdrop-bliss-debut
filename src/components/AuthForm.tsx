@@ -71,7 +71,7 @@ const AuthForm = ({ onSuccess }: AuthFormProps) => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                placeholder="admin@exotichauls.com"
+                placeholder="admin@exotichaul.com"
               />
             </div>
             <div className="space-y-2">

@@ -46,7 +46,7 @@ const Admin = () => {
   }
 
   // Check if user is the authorized admin
-  const isAuthorizedAdmin = user?.email === 'exotichauls@gmail.com';
+  const isAuthorizedAdmin = user?.email === 'exotichaul@gmail.com';
 
   if (!user) {
     return <AuthForm onSuccess={handleAuthSuccess} />;
