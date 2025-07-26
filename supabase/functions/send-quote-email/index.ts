@@ -16,6 +16,7 @@ interface QuoteRequest {
   deliveryAddress: string;
   preferredDate?: string;
   vehicleType?: string;
+  additionalComments?: string;
 }
 
 const handler = async (req: Request): Promise<Response> => {
@@ -38,6 +39,7 @@ const handler = async (req: Request): Promise<Response> => {
       deliveryAddress,
       preferredDate,
       vehicleType,
+      additionalComments,
     } = quoteData;
 
     // Send email to business
@@ -57,6 +59,7 @@ const handler = async (req: Request): Promise<Response> => {
         <p><strong>Delivery Address:</strong> ${deliveryAddress}</p>
         <p><strong>Preferred Date:</strong> ${preferredDate || 'Not specified'}</p>
         <p><strong>Vehicle Type:</strong> ${vehicleType || 'Not specified'}</p>
+        ${additionalComments ? `<p><strong>Additional Comments:</strong> ${additionalComments}</p>` : ''}
         
         <h3>Next Steps:</h3>
         <p>Reply to this email or call <strong>${customerPhone || customerEmail}</strong> to provide the quote.</p>

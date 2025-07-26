@@ -4,7 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { CalendarIcon, Search, Truck, MapPin, ArrowRight, Mail, Phone } from "lucide-react";
+import { Textarea } from "@/components/ui/textarea";
+import { CalendarIcon, Search, Truck, MapPin, ArrowRight, Mail, Phone, MessageSquare } from "lucide-react";
 import { format } from "date-fns";
 import { cn } from "@/lib/utils";
 import { supabase } from "@/integrations/supabase/client";
@@ -18,6 +19,7 @@ const QuoteForm = () => {
   const [customerName, setCustomerName] = useState("");
   const [customerEmail, setCustomerEmail] = useState("");
   const [customerPhone, setCustomerPhone] = useState("");
+  const [additionalComments, setAdditionalComments] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
@@ -47,6 +49,7 @@ const QuoteForm = () => {
           deliveryAddress,
           preferredDate: selectedDate ? format(selectedDate, "PPP") : null,
           vehicleType,
+          additionalComments,
         }
       });
 
@@ -67,7 +70,8 @@ const QuoteForm = () => {
       setCustomerName("");
       setCustomerEmail("");
       setCustomerPhone("");
-      console.log('Form reset successfully');
+      setAdditionalComments("");
+      console.log("Form reset successfully");
 
     } catch (error) {
       console.error('Error sending quote request:', error);
@@ -223,6 +227,20 @@ const QuoteForm = () => {
             </Button>
           </div>
         </div>
+      </div>
+      
+      {/* Additional Comments Section */}
+      <div className="mt-6">
+        <div className="flex items-center gap-2 text-white/80 text-sm mb-2">
+          <MessageSquare className="w-4 h-4" />
+          <span>Additional Comments</span>
+        </div>
+        <Textarea
+          placeholder="Any special requirements, vehicle details, or additional information..."
+          value={additionalComments}
+          onChange={(e) => setAdditionalComments(e.target.value)}
+          className="bg-white/20 border-white/30 text-white placeholder:text-white/60 focus:border-white/50 min-h-[100px]"
+        />
       </div>
     </div>
   );
