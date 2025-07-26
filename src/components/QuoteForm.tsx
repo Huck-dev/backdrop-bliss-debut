@@ -206,23 +206,14 @@ const QuoteForm = () => {
             />
             <Button
               onClick={() => {
+                alert('Button clicked!');
                 console.log('Button clicked!');
-                handleSubmit();
               }}
               disabled={isSubmitting}
               className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 h-10 w-auto flex items-center justify-center gap-2 whitespace-nowrap"
             >
-              {isSubmitting ? (
-                <>
-                  <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                  <span className="text-sm">Sending...</span>
-                </>
-              ) : (
-                <>
-                  <Search className="w-4 h-4" />
-                  <span className="text-sm">Get Quote</span>
-                </>
-              )}
+              <Search className="w-4 h-4" />
+              <span className="text-sm">Get Quote</span>
             </Button>
           </div>
         </div>
