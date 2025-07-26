@@ -8,7 +8,7 @@ import { CalendarIcon, Search, Truck, MapPin, ArrowRight, Mail, Phone } from "lu
 import { format } from "date-fns";
 import { cn } from "@/lib/utils";
 import { supabase } from "@/integrations/supabase/client";
-import { useToast } from "@/components/ui/use-toast";
+import { useToast } from "@/hooks/use-toast";
 
 const QuoteForm = () => {
   const [pickupAddress, setPickupAddress] = useState("");
@@ -22,8 +22,10 @@ const QuoteForm = () => {
   const { toast } = useToast();
 
   const handleSubmit = async () => {
+    console.log('Quote form submitted');
     // Validate required fields
     if (!pickupAddress || !deliveryAddress || !customerName || !customerEmail) {
+      console.log('Validation failed - missing required fields');
       toast({
         title: "Missing Information",
         description: "Please fill in all required fields",
@@ -33,6 +35,7 @@ const QuoteForm = () => {
     }
 
     setIsSubmitting(true);
+    console.log('Sending quote request to edge function...');
 
     try {
       const { data, error } = await supabase.functions.invoke('send-quote-email', {
@@ -46,6 +49,8 @@ const QuoteForm = () => {
           vehicleType,
         }
       });
+
+      console.log('Edge function response:', { data, error });
 
       if (error) throw error;
 
@@ -62,6 +67,7 @@ const QuoteForm = () => {
       setCustomerName("");
       setCustomerEmail("");
       setCustomerPhone("");
+      console.log('Form reset successfully');
 
     } catch (error) {
       console.error('Error sending quote request:', error);
