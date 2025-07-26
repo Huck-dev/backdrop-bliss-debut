@@ -11,7 +11,8 @@ const Header = () => {
     { name: "Services", href: "#services" },
     { name: "About", href: "#about" },
     { name: "FAQ", href: "#faq" },
-    { name: "Contact", href: "#contact" }
+    { name: "Contact", href: "#contact" },
+    { name: "Admin", href: "/admin", external: true }
   ];
 
   const scrollToSection = (href: string) => {
@@ -38,13 +39,23 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => scrollToSection(item.href)}
-                className="text-slate-200 hover:text-white font-medium transition-colors"
-              >
-                {item.name}
-              </button>
+              item.external ? (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="text-slate-200 hover:text-white font-medium transition-colors"
+                >
+                  {item.name}
+                </a>
+              ) : (
+                <button
+                  key={item.name}
+                  onClick={() => scrollToSection(item.href)}
+                  className="text-slate-200 hover:text-white font-medium transition-colors"
+                >
+                  {item.name}
+                </button>
+              )
             ))}
           </nav>
 

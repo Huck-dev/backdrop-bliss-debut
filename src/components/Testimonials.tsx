@@ -2,28 +2,61 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Star } from "lucide-react";
+import { useState, useEffect } from "react";
+import { supabase } from "@/integrations/supabase/client";
+
+interface Testimonial {
+  id: string;
+  name: string;
+  location: string;
+  rating: number;
+  review: string;
+}
 
 const Testimonials = () => {
-  const testimonials = [
-    {
-      name: "Alan Gallant",
-      location: "Winnipeg to Ontario",
-      rating: 5,
-      review: "Ian did an incredible job bringing a 1971 Cuda project car from Winnipeg, to me here in Ontario...with a crate motor as well...great job👍👍"
-    },
-    {
-      name: "Kevin Wagner",
-      location: "Professional Transport",
-      rating: 5,
-      review: "Awesome job!! VERY happy with this company .. very professional and extremely careful"
-    },
-    {
-      name: "Joe Hanna",
-      location: "Calgary Delivery",
-      rating: 5,
-      review: "I'm so thrilled to have 68 Oldsmobile here in Calgary, Ian from Exotic Hauls did a fantastic job getting it here safely and in a very timely manor, he was even able to deliver it a day earlier than what expected, I would definitely recommend his service , drive safe my new friend 🙏🙏"
-    }
-  ];
+  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
+
+  useEffect(() => {
+    const fetchTestimonials = async () => {
+      try {
+        const { data, error } = await supabase
+          .from('testimonials')
+          .select('*')
+          .order('created_at', { ascending: false });
+
+        if (error) throw error;
+        setTestimonials(data || []);
+      } catch (error) {
+        console.error('Error fetching testimonials:', error);
+        // Fallback to default testimonials if database fails
+        setTestimonials([
+          {
+            id: "1",
+            name: "Alan Gallant",
+            location: "Ontario",
+            rating: 5,
+            review: "Ian did an incredible job bringing a 1971 Cuda project car from Winnipeg, to me here in Ontario...with a crate motor as well...great job👍👍"
+          },
+          {
+            id: "2",
+            name: "Kevin Wagner", 
+            location: "Canada",
+            rating: 5,
+            review: "Awesome job!! VERY happy with this company .. very professional and extremely careful"
+          },
+          {
+            id: "3",
+            name: "Joe Hanna",
+            location: "Calgary",
+            rating: 5,
+            review: "I'm so thrilled to have 68 Oldsmobile here in Calgary, Ian from Exotic Hauls did a fantastic job getting it here safely and in a very timely manor, he was even able to deliver it a day earlier than what expected, I would definitely recommend his service , drive safe my new friend 🙏🙏"
+          }
+        ]);
+      }
+    };
+
+    fetchTestimonials();
+  }, []);
 
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, index) => (

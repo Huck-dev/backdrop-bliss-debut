@@ -1,26 +1,63 @@
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { HelpCircle } from "lucide-react";
+import { useState, useEffect } from "react";
+import { supabase } from "@/integrations/supabase/client";
+
+interface FAQ {
+  id: string;
+  question: string;
+  answer: string;
+  display_order: number;
+}
 
 const FAQ = () => {
-  const faqs = [
-    {
-      question: "What services does Exotic Hauls provide?",
-      answer: "Transport for exotic high end vehicles in a fully enclosed trailer."
-    },
-    {
-      question: "What information is required to obtain a quote to ship my vehicle?",
-      answer: "Pickup location and final destination, Vehicle make and model, Vehicle length, width, height"
-    },
-    {
-      question: "What regions and countries does Exotic Hauls serve?",
-      answer: "We cover Canada, coast to coast."
-    },
-    {
-      question: "Does Exotic Hauls offer insurance for vehicles being transported?",
-      answer: "We are fully insured for $200000 Cargo. Insurance can be increased for more expensive vehicles on request."
-    }
-  ];
+  const [faqs, setFaqs] = useState<FAQ[]>([]);
+
+  useEffect(() => {
+    const fetchFaqs = async () => {
+      try {
+        const { data, error } = await supabase
+          .from('faqs')
+          .select('*')
+          .order('display_order', { ascending: true });
+
+        if (error) throw error;
+        setFaqs(data || []);
+      } catch (error) {
+        console.error('Error fetching FAQs:', error);
+        // Fallback to default FAQs if database fails
+        setFaqs([
+          {
+            id: "1",
+            question: "What services does Exotic Hauls provide?",
+            answer: "Transport for exotic high end vehicles in a fully enclosed trailer.",
+            display_order: 1
+          },
+          {
+            id: "2",
+            question: "What information is required to obtain a quote to ship my vehicle?",
+            answer: "Pickup location and final destination, Vehicle make and model, Vehicle length, width, height",
+            display_order: 2
+          },
+          {
+            id: "3",
+            question: "What regions and countries does Exotic Hauls serve?",
+            answer: "We cover Canada, coast to coast.",
+            display_order: 3
+          },
+          {
+            id: "4",
+            question: "Does Exotic Hauls offer insurance for vehicles being transported?",
+            answer: "We are fully insured for $200000 Cargo. Insurance can be increased for more expensive vehicles on request.",
+            display_order: 4
+          }
+        ]);
+      }
+    };
+
+    fetchFaqs();
+  }, []);
 
   return (
     <section className="py-20 px-4 bg-transparent">
