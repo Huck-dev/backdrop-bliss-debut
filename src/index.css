@@ -8,59 +8,69 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Base colors - luxury dark theme */
+    --background: 240 15% 8%;
+    --foreground: 0 0% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 240 12% 12%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 240 12% 12%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 221 83% 53%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 142 76% 46%;
+    --primary-foreground: 240 15% 8%;
 
-    --secondary: 24 90% 60%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 280 65% 60%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 240 10% 20%;
+    --muted-foreground: 240 5% 65%;
 
-    --accent: 168 76% 42%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 35 95% 65%;
+    --accent-foreground: 240 15% 8%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 221 83% 53%;
+    --border: 240 10% 25%;
+    --input: 240 10% 18%;
+    --ring: 142 76% 46%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    /* Enhanced color palette for automotive luxury */
-    --primary-glow: 221 83% 65%;
-    --secondary-glow: 24 90% 70%;
-    --accent-glow: 168 76% 52%;
+    /* Enhanced luxury color palette */
+    --primary-glow: 142 86% 56%;
+    --secondary-glow: 280 75% 70%;
+    --accent-glow: 35 100% 75%;
     
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(221 83% 53%), hsl(221 83% 65%));
-    --gradient-secondary: linear-gradient(135deg, hsl(24 90% 60%), hsl(24 90% 70%));
-    --gradient-hero: linear-gradient(135deg, hsl(221 83% 53% / 0.9), hsl(222 84% 4.9% / 0.9));
+    /* Premium gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(142 76% 46%), hsl(142 86% 56%));
+    --gradient-secondary: linear-gradient(135deg, hsl(280 65% 60%), hsl(280 75% 70%));
+    --gradient-accent: linear-gradient(135deg, hsl(35 95% 65%), hsl(35 100% 75%));
+    --gradient-hero: linear-gradient(135deg, hsl(240 15% 8% / 0.95), hsl(240 20% 12% / 0.9));
+    --gradient-surface: linear-gradient(135deg, hsl(240 12% 12%), hsl(240 15% 15%));
+    --gradient-card: linear-gradient(135deg, hsl(240 12% 12%), hsl(240 10% 14%));
     
-    /* Shadows */
-    --shadow-primary: 0 10px 30px -10px hsl(221 83% 53% / 0.3);
-    --shadow-secondary: 0 10px 30px -10px hsl(24 90% 60% / 0.3);
-    --shadow-accent: 0 10px 30px -10px hsl(168 76% 42% / 0.3);
+    /* Premium shadows */
+    --shadow-primary: 0 20px 40px -10px hsl(142 76% 46% / 0.3);
+    --shadow-secondary: 0 20px 40px -10px hsl(280 65% 60% / 0.3);
+    --shadow-accent: 0 20px 40px -10px hsl(35 95% 65% / 0.3);
+    --shadow-elegant: 0 32px 64px -12px hsl(240 15% 8% / 0.6);
+    --shadow-glass: 0 8px 32px hsl(240 15% 8% / 0.3);
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 221 83% 53%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 221 83% 53%;
+    /* Glass morphism */
+    --glass-bg: hsl(240 12% 12% / 0.8);
+    --glass-border: hsl(240 10% 25% / 0.3);
+
+    --sidebar-background: 240 12% 12%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 142 76% 46%;
+    --sidebar-primary-foreground: 240 15% 8%;
+    --sidebar-accent: 240 10% 20%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 240 10% 25%;
+    --sidebar-ring: 142 76% 46%;
   }
 
   .dark {

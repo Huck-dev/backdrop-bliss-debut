@@ -11,16 +11,26 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-96">
-      {/* Content - moved much lower */}
-      <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto">        
+      {/* Content with enhanced styling */}
+      <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
+        {/* Hero Content */}
+        <div className="mb-12 animate-fade-in">
+          <h1 className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-primary via-primary-glow to-accent bg-clip-text text-transparent mb-6 leading-tight">
+            EXOTIC HAULS
+          </h1>
+          <p className="text-xl md:text-2xl text-foreground/80 font-light max-w-3xl mx-auto mb-8 leading-relaxed">
+            Premium automotive transport solutions for luxury and exotic vehicles
+          </p>
+        </div>
+        
         {/* Call to Action Button */}
         <div className="animate-fade-in">
           <Button
             onClick={scrollToQuote}
             size="lg"
-            className="bg-green-600 hover:bg-green-700 text-white px-12 py-6 text-xl font-semibold transition-all duration-300 hover:scale-105"
+            className="bg-gradient-to-r from-primary to-primary-glow hover:from-primary-glow hover:to-primary text-primary-foreground px-16 py-8 text-xl font-semibold transition-all duration-500 hover:scale-105 shadow-[var(--shadow-primary)] hover:shadow-[var(--shadow-elegant)] border-0 rounded-2xl"
           >
-            Request a Quote
+            Request Premium Quote
           </Button>
         </div>
       </div>
