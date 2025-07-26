@@ -30,10 +30,10 @@ const Services = () => {
     <section className="py-20 px-4 bg-transparent">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
             Our Services
           </h2>
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
             Comprehensive auto transport solutions tailored to meet the unique needs of luxury and exotic vehicle owners.
           </p>
         </div>
@@ -42,18 +42,18 @@ const Services = () => {
           {services.map((service, index) => (
             <Card 
               key={index} 
-              className="hover:shadow-xl transition-all duration-300 hover:scale-105 border-0 shadow-lg bg-slate-800/80 backdrop-blur-sm"
+              className="hover:shadow-xl transition-all duration-300 hover:scale-105 border border-slate-200 shadow-lg bg-white"
             >
               <CardHeader className="text-center pb-4">
-                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
-                  <service.icon className="w-8 h-8 text-slate-900" />
+                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <service.icon className="w-8 h-8 text-white" />
                 </div>
-                <CardTitle className="text-xl font-bold text-white">
+                <CardTitle className="text-xl font-bold text-slate-900">
                   {service.title}
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-slate-300 text-center leading-relaxed">
+                <CardDescription className="text-slate-600 text-center leading-relaxed">
                   {service.description}
                 </CardDescription>
               </CardContent>

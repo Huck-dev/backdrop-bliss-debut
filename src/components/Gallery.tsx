@@ -123,10 +123,10 @@ const Gallery = () => {
     <section className="py-20 px-4 bg-transparent">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
             Our Work Gallery
           </h2>
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
             See our professional vehicle transport services in action. From classic muscle cars to modern supercars, 
             we handle every vehicle with the utmost care and precision.
           </p>

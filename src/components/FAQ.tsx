@@ -23,16 +23,16 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-slate-800">
+    <section className="py-20 px-4 bg-transparent">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
-          <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6">
-            <HelpCircle className="w-8 h-8 text-slate-900" />
+          <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+            <HelpCircle className="w-8 h-8 text-white" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
             Frequently Asked Questions
           </h2>
-          <p className="text-xl text-slate-300 max-w-2xl mx-auto">
+          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
             Get answers to common questions about our premium vehicle transport services
           </p>
         </div>
@@ -42,17 +42,17 @@ const FAQ = () => {
             <AccordionItem 
               key={index} 
               value={`item-${index}`}
-              className="bg-slate-700/50 backdrop-blur-sm rounded-lg border-slate-600 px-6"
+              className="bg-white border border-slate-200 rounded-lg shadow-sm px-6"
             >
-              <AccordionTrigger className="text-white hover:text-slate-200 text-left py-6">
+              <AccordionTrigger className="text-slate-900 hover:text-primary text-left py-6">
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="text-slate-300 pb-6">
+              <AccordionContent className="text-slate-600 pb-6">
                 {faq.answer.includes(',') ? (
                   <ul className="space-y-2">
                     {faq.answer.split(',').map((item, idx) => (
                       <li key={idx} className="flex items-start">
-                        <span className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
                         {item.trim()}
                       </li>
                     ))}
