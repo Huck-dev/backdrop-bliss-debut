@@ -45,7 +45,7 @@ const handler = async (req: Request): Promise<Response> => {
     // Send email to business
     const businessEmailResponse = await resend.emails.send({
       from: "Quote Request <onboarding@resend.dev>",
-      to: ["alex@server9.dev"], // Quote requests will come to you
+      to: ["exotichaul@gmail.com"], // Quote requests will go to the business
       subject: `New Quote Request from ${customerName}`,
       html: `
         <h2>New Car Transport Quote Request</h2>
