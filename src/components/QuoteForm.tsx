@@ -4,26 +4,127 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { CalendarIcon, Search, Truck, MapPin, ArrowRight } from "lucide-react";
+import { CalendarIcon, Search, Truck, MapPin, ArrowRight, Mail, Phone } from "lucide-react";
 import { format } from "date-fns";
 import { cn } from "@/lib/utils";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/components/ui/use-toast";
 
 const QuoteForm = () => {
   const [pickupAddress, setPickupAddress] = useState("");
   const [deliveryAddress, setDeliveryAddress] = useState("");
   const [selectedDate, setSelectedDate] = useState<Date>();
   const [vehicleType, setVehicleType] = useState("");
+  const [customerName, setCustomerName] = useState("");
+  const [customerEmail, setCustomerEmail] = useState("");
+  const [customerPhone, setCustomerPhone] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
-  const handleSubmit = () => {
-    // Scroll to contact section when form is submitted
-    const contactElement = document.querySelector('#contact');
-    if (contactElement) {
-      contactElement.scrollIntoView({ behavior: 'smooth' });
+  const handleSubmit = async () => {
+    // Validate required fields
+    if (!pickupAddress || !deliveryAddress || !customerName || !customerEmail) {
+      toast({
+        title: "Missing Information",
+        description: "Please fill in all required fields",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const { data, error } = await supabase.functions.invoke('send-quote-email', {
+        body: {
+          customerName,
+          customerEmail,
+          customerPhone,
+          pickupAddress,
+          deliveryAddress,
+          preferredDate: selectedDate ? format(selectedDate, "PPP") : null,
+          vehicleType,
+        }
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Quote Request Sent!",
+        description: "We'll get back to you with a quote within 24 hours",
+      });
+
+      // Reset form
+      setPickupAddress("");
+      setDeliveryAddress("");
+      setSelectedDate(undefined);
+      setVehicleType("");
+      setCustomerName("");
+      setCustomerEmail("");
+      setCustomerPhone("");
+
+    } catch (error) {
+      console.error('Error sending quote request:', error);
+      toast({
+        title: "Error",
+        description: "Failed to send quote request. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   return (
     <div className="bg-white/10 backdrop-blur-md rounded-lg p-6 max-w-4xl mx-auto border border-white/20">
+      {/* Contact Information Row */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+        {/* Customer Name */}
+        <div className="space-y-2">
+          <div className="flex items-center gap-2 text-white/80 text-sm">
+            <span>Name *</span>
+          </div>
+          <Input
+            placeholder="Your Name"
+            value={customerName}
+            onChange={(e) => setCustomerName(e.target.value)}
+            className="bg-white/20 border-white/30 text-white placeholder:text-white/60 focus:border-white/50"
+            required
+          />
+        </div>
+
+        {/* Customer Email */}
+        <div className="space-y-2">
+          <div className="flex items-center gap-2 text-white/80 text-sm">
+            <Mail className="w-4 h-4" />
+            <span>Email *</span>
+          </div>
+          <Input
+            type="email"
+            placeholder="your@email.com"
+            value={customerEmail}
+            onChange={(e) => setCustomerEmail(e.target.value)}
+            className="bg-white/20 border-white/30 text-white placeholder:text-white/60 focus:border-white/50"
+            required
+          />
+        </div>
+
+        {/* Customer Phone */}
+        <div className="space-y-2">
+          <div className="flex items-center gap-2 text-white/80 text-sm">
+            <Phone className="w-4 h-4" />
+            <span>Phone</span>
+          </div>
+          <Input
+            type="tel"
+            placeholder="(555) 123-4567"
+            value={customerPhone}
+            onChange={(e) => setCustomerPhone(e.target.value)}
+            className="bg-white/20 border-white/30 text-white placeholder:text-white/60 focus:border-white/50"
+          />
+        </div>
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
         {/* Pickup Address */}
         <div className="space-y-2">
@@ -99,9 +200,20 @@ const QuoteForm = () => {
             />
             <Button
               onClick={handleSubmit}
-              className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 h-10 w-12 flex items-center justify-center"
+              disabled={isSubmitting}
+              className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 h-10 w-auto flex items-center justify-center gap-2 whitespace-nowrap"
             >
-              <Search className="w-4 h-4" />
+              {isSubmitting ? (
+                <>
+                  <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                  <span className="text-sm">Sending...</span>
+                </>
+              ) : (
+                <>
+                  <Search className="w-4 h-4" />
+                  <span className="text-sm">Get Quote</span>
+                </>
+              )}
             </Button>
           </div>
         </div>
