@@ -61,7 +61,21 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Enhanced color palette for automotive luxury
+				'primary-glow': 'hsl(var(--primary-glow))',
+				'secondary-glow': 'hsl(var(--secondary-glow))',
+				'accent-glow': 'hsl(var(--accent-glow))',
+			},
+			backgroundImage: {
+				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-secondary': 'var(--gradient-secondary)',
+				'gradient-hero': 'var(--gradient-hero)',
+			},
+			boxShadow: {
+				'primary': 'var(--shadow-primary)',
+				'secondary': 'var(--shadow-secondary)',
+				'accent': 'var(--shadow-accent)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
