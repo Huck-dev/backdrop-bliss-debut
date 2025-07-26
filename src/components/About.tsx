@@ -103,6 +103,14 @@ const About = () => {
               >
                 Follow on Instagram
               </Button>
+              <Button 
+                size="lg" 
+                variant="outline"
+                className="border-white bg-transparent text-white hover:bg-white hover:text-slate-900 px-8 py-3 text-lg transition-all duration-300"
+                onClick={() => window.open('https://www.facebook.com/share/1ApSv88Eqx/', '_blank')}
+              >
+                Follow on Facebook
+              </Button>
             </div>
           </div>
           

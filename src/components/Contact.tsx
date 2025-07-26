@@ -82,17 +82,6 @@ const Contact = () => {
               </CardContent>
             </Card>
             
-            <Card className="bg-gradient-to-br from-red-600 to-red-700 border-red-500">
-              <CardContent className="p-6 text-center">
-                <h3 className="text-xl font-bold text-white mb-3">Emergency Transport?</h3>
-                <p className="text-red-100 mb-4">Need immediate assistance or have an urgent transport request?</p>
-                <Button 
-                  className="bg-white text-red-600 hover:bg-red-50 w-full font-semibold transition-all duration-300"
-                >
-                  Emergency Hotline
-                </Button>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </div>

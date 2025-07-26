@@ -1,6 +1,6 @@
 
 import { Separator } from "@/components/ui/separator";
-import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Facebook, Instagram } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -19,10 +19,11 @@ const Footer = () => {
               Where your passion meets our precision.
             </p>
             <div className="flex space-x-4">
-              <Facebook className="w-6 h-6 text-slate-400 hover:text-white cursor-pointer transition-colors" />
-              <Twitter className="w-6 h-6 text-slate-400 hover:text-white cursor-pointer transition-colors" />
+              <Facebook 
+                className="w-6 h-6 text-slate-400 hover:text-white cursor-pointer transition-colors" 
+                onClick={() => window.open('https://www.facebook.com/share/1ApSv88Eqx/', '_blank')}
+              />
               <Instagram className="w-6 h-6 text-slate-400 hover:text-white cursor-pointer transition-colors" />
-              <Linkedin className="w-6 h-6 text-slate-400 hover:text-white cursor-pointer transition-colors" />
             </div>
           </div>
           
