@@ -6,28 +6,22 @@ import { Star } from "lucide-react";
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "Sarah Mitchell",
-      location: "Calgary to Vancouver",
+      name: "Alan Gallant",
+      location: "Winnipeg to Ontario",
       rating: 5,
-      review: "Could not be happier with Exotic Hauls. The staff was friendly and my Lamborghini arrived on time. I appreciated their attention to detail and how they made sure my car was well-protected during the transport. The pricing was transparent, and there were no hidden fees. Highly recommended!"
+      review: "Ian did an incredible job bringing a 1971 Cuda project car from Winnipeg, to me here in Ontario...with a crate motor as well...great job👍👍"
     },
     {
-      name: "David Chen",
-      location: "Toronto to Montreal",
+      name: "Kevin Wagner",
+      location: "Professional Transport",
       rating: 5,
-      review: "Amazing service! My Ferrari was picked up and delivered right on time. Highly recommend!"
+      review: "Awesome job!! VERY happy with this company .. very professional and extremely careful"
     },
     {
-      name: "Emma Wilson",
-      location: "BC to Newfoundland",
+      name: "Joe Hanna",
+      location: "Calgary Delivery",
       rating: 5,
-      review: "The Exotic Hauls team was amazing! Quick pickup, perfect delivery. Thanks!"
-    },
-    {
-      name: "Michael Rodriguez",
-      location: "Edmonton to Toronto",
-      rating: 5,
-      review: "Professional service from start to finish. My McLaren was handled with the utmost care and arrived in pristine condition. The enclosed trailer provided excellent protection during the long journey across Canada."
+      review: "I'm so thrilled to have 68 Oldsmobile here in Calgary, Ian from Exotic Hauls did a fantastic job getting it here safely and in a very timely manor, he was even able to deliver it a day earlier than what expected, I would definitely recommend his service , drive safe my new friend 🙏🙏"
     }
   ];
 
