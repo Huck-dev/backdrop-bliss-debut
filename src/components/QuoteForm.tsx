@@ -205,7 +205,10 @@ const QuoteForm = () => {
               className="bg-white/20 border-white/30 text-white placeholder:text-white/60 focus:border-white/50 flex-1"
             />
             <Button
-              onClick={handleSubmit}
+              onClick={() => {
+                console.log('Button clicked!');
+                handleSubmit();
+              }}
               disabled={isSubmitting}
               className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 h-10 w-auto flex items-center justify-center gap-2 whitespace-nowrap"
             >
