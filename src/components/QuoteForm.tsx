@@ -23,8 +23,6 @@ const QuoteForm = () => {
 
   const handleSubmit = async () => {
     console.log('=== QUOTE FORM SUBMIT START ===');
-    alert('Form submitted!');
-    console.log('Form data:', { pickupAddress, deliveryAddress, customerName, customerEmail });
     // Validate required fields
     if (!pickupAddress || !deliveryAddress || !customerName || !customerEmail) {
       console.log('Validation failed - missing required fields');
