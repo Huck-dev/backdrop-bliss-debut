@@ -208,23 +208,6 @@ const QuoteForm = () => {
               onChange={(e) => setVehicleType(e.target.value)}
               className="bg-white/20 border-white/30 text-white placeholder:text-white/60 focus:border-white/50 flex-1"
             />
-            <Button
-              onClick={handleSubmit}
-              disabled={isSubmitting}
-              className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 h-10 w-auto flex items-center justify-center gap-2 whitespace-nowrap"
-            >
-              {isSubmitting ? (
-                <>
-                  <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                  <span className="text-sm">Sending...</span>
-                </>
-              ) : (
-                <>
-                  <Search className="w-4 h-4" />
-                  <span className="text-sm">Get Quote</span>
-                </>
-              )}
-            </Button>
           </div>
         </div>
       </div>
@@ -241,6 +224,27 @@ const QuoteForm = () => {
           onChange={(e) => setAdditionalComments(e.target.value)}
           className="bg-white/20 border-white/30 text-white placeholder:text-white/60 focus:border-white/50 min-h-[100px]"
         />
+      </div>
+      
+      {/* Get Quote Button */}
+      <div className="mt-6 flex justify-center">
+        <Button
+          onClick={handleSubmit}
+          disabled={isSubmitting}
+          className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 text-lg font-semibold transition-all duration-300 hover:scale-105"
+        >
+          {isSubmitting ? (
+            <>
+              <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin mr-2"></div>
+              <span>Sending...</span>
+            </>
+          ) : (
+            <>
+              <Search className="w-5 h-5 mr-2" />
+              <span>Get Quote</span>
+            </>
+          )}
+        </Button>
       </div>
     </div>
   );
