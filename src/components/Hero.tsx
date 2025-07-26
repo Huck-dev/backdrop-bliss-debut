@@ -10,8 +10,8 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32">
-      {/* Content - centered with more space from top */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-80">
+      {/* Content - moved significantly lower */}
       <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto">        
         {/* Call to Action Button */}
         <div className="animate-fade-in">
