@@ -57,6 +57,10 @@ const handler = async (req: Request): Promise<Response> => {
         <p><strong>Delivery Address:</strong> ${deliveryAddress}</p>
         <p><strong>Preferred Date:</strong> ${preferredDate || 'Not specified'}</p>
         <p><strong>Vehicle Type:</strong> ${vehicleType || 'Not specified'}</p>
+        
+        <h3>Next Steps:</h3>
+        <p>Reply to this email or call <strong>${customerPhone || customerEmail}</strong> to provide the quote.</p>
+        <p>Customer is expecting a response within 24 hours.</p>
       `,
     });
 
