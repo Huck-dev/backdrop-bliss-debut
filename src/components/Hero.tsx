@@ -1,14 +1,34 @@
 
-import QuoteForm from "./QuoteForm";
+import { Button } from "@/components/ui/button";
 
 const Hero = () => {
+  const scrollToQuote = () => {
+    const contactElement = document.querySelector('#contact');
+    if (contactElement) {
+      contactElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section className="relative min-h-screen flex items-end justify-center overflow-hidden pb-32">
-      {/* Content - positioned in lower portion */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Content - centered */}
       <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto">
-        {/* Quote Form */}
+        <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
+          Premium Auto Transport
+        </h1>
+        <p className="text-xl md:text-2xl mb-12 text-white/90 max-w-3xl mx-auto animate-fade-in">
+          Secure, reliable vehicle shipping across Canada with white-glove service for luxury and exotic cars
+        </p>
+        
+        {/* Call to Action Button */}
         <div className="animate-fade-in">
-          <QuoteForm />
+          <Button
+            onClick={scrollToQuote}
+            size="lg"
+            className="bg-green-600 hover:bg-green-700 text-white px-12 py-6 text-xl font-semibold transition-all duration-300 hover:scale-105"
+          >
+            Request a Quote
+          </Button>
         </div>
       </div>
       

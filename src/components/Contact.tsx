@@ -1,9 +1,8 @@
 
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Phone, Mail, MapPin, Clock, Instagram } from "lucide-react";
+import QuoteForm from "./QuoteForm";
 
 const Contact = () => {
   return (
@@ -21,39 +20,10 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <Card className="bg-slate-800 border-slate-700">
-              <CardHeader>
-                <CardTitle className="text-2xl text-white">Get Your Quote</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <Input placeholder="First Name" className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400" />
-                  <Input placeholder="Last Name" className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400" />
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <Input placeholder="Email Address" className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400" />
-                  <Input placeholder="Phone Number" className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400" />
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <Input placeholder="Pickup Location" className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400" />
-                  <Input placeholder="Delivery Location" className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400" />
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <Input placeholder="Vehicle Make & Model" className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400" />
-                  <Input placeholder="Vehicle Year" className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400" />
-                </div>
-                <Textarea 
-                  placeholder="Additional details about your vehicle or transport requirements..." 
-                  className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400 min-h-[120px]"
-                />
-                <Button 
-                  size="lg" 
-                  className="w-full bg-white text-slate-900 hover:bg-slate-100 py-3 text-lg font-semibold transition-all duration-300 hover:scale-105"
-                >
-                  Request Quote
-                </Button>
-              </CardContent>
-            </Card>
+            <div className="bg-slate-800 border border-slate-700 rounded-lg p-6">
+              <h3 className="text-2xl font-bold text-white mb-6">Get Your Quote</h3>
+              <QuoteForm />
+            </div>
           </div>
           
           {/* Contact Info */}

@@ -82,7 +82,7 @@ const QuoteForm = () => {
   };
 
   return (
-    <div className="bg-white/10 backdrop-blur-md rounded-lg p-6 max-w-4xl mx-auto border border-white/20">
+    <div className="bg-slate-700/50 backdrop-blur-md rounded-lg p-6 border border-slate-600">
       {/* Contact Information Row */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
         {/* Customer Name */}
