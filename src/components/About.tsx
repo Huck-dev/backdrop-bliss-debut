@@ -148,7 +148,7 @@ const About = () => {
             <div className="bg-slate-800/80 backdrop-blur-sm rounded-xl p-6">
               <h3 className="text-xl font-bold text-white mb-4 text-center">Coast-to-Coast Coverage</h3>
               <p className="text-slate-300 text-center text-sm leading-relaxed">
-                From Vancouver to Halifax and everywhere in between. Our comprehensive service network 
+                From BC to Newfoundland and everywhere in between. Our comprehensive service network 
                 ensures reliable, secure transport across all Canadian provinces.
               </p>
             </div>

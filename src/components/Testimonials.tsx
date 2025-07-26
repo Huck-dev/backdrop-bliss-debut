@@ -19,7 +19,7 @@ const Testimonials = () => {
     },
     {
       name: "Emma Wilson",
-      location: "Vancouver to Halifax",
+      location: "BC to Newfoundland",
       rating: 5,
       review: "The Exotic Hauls team was amazing! Quick pickup, perfect delivery. Thanks!"
     },
