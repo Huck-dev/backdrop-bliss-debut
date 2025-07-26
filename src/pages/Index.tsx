@@ -18,19 +18,19 @@ const Index = () => {
       <section id="home">
         <Hero />
       </section>
-      <section id="services">
+      <section id="services" className="bg-white">
         <Services />
       </section>
       <section id="about">
         <About />
       </section>
-      <section id="gallery">
+      <section id="gallery" className="bg-white">
         <Gallery />
       </section>
       <section id="testimonials">
         <Testimonials />
       </section>
-      <section id="faq">
+      <section id="faq" className="bg-white">
         <FAQ />
       </section>
       <section id="contact">
