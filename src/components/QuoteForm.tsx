@@ -192,14 +192,14 @@ const QuoteForm = () => {
         </div>
 
         {/* Vehicle Details & Search Button */}
-        <div className="space-y-2">
+        <div className="space-y-2 md:col-span-2">
           <div className="flex items-center gap-2 text-white/80 text-sm">
             <Truck className="w-4 h-4" />
-            <span>Details</span>
+            <span>Vehicle Details (Year, Make, Model)</span>
           </div>
           <div className="flex gap-2">
             <Input
-              placeholder="Select Vehicle"
+              placeholder="e.g. 2023 Tesla Model S"
               value={vehicleType}
               onChange={(e) => setVehicleType(e.target.value)}
               className="bg-white/20 border-white/30 text-white placeholder:text-white/60 focus:border-white/50 flex-1"
