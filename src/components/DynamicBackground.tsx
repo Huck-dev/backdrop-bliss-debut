@@ -23,7 +23,7 @@ const DynamicBackground = () => {
       
       {/* Background logo with parallax effect */}
       <div 
-        className="absolute inset-0 flex items-center justify-center opacity-20"
+        className="absolute inset-0 flex items-center justify-center opacity-40"
         style={{ 
           transform: `translateY(${scrollY * 0.2}px)`,
         }}
@@ -34,8 +34,6 @@ const DynamicBackground = () => {
             alt="Exotic Hauls Logo" 
             className="w-full h-auto object-contain mx-auto"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/20"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/30"></div>
         </div>
       </div>
     </div>
