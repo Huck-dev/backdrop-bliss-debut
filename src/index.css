@@ -43,6 +43,11 @@ All colors MUST be HSL.
     --secondary-glow: 24 90% 70%;
     --accent-glow: 168 76% 52%;
     
+    /* Gold and black glow colors */
+    --gold: 45 100% 51%;
+    --gold-muted: 45 100% 35%;
+    --deep-black: 0 0% 5%;
+    
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(221 83% 53%), hsl(221 83% 65%));
     --gradient-secondary: linear-gradient(135deg, hsl(24 90% 60%), hsl(24 90% 70%));
