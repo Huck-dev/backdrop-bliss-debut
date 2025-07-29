@@ -32,33 +32,47 @@ const DynamicBackground = () => {
         }}
       />
       
-      {/* Classic ornamental elements */}
-      <div className="absolute inset-0">
-        {/* Corner decorative elements */}
-        <div className="absolute top-8 left-8 w-32 h-32 border-l-2 border-t-2 border-yellow-400/40 opacity-60" />
-        <div className="absolute top-8 right-8 w-32 h-32 border-r-2 border-t-2 border-blue-400/40 opacity-60" />
-        <div className="absolute bottom-8 left-8 w-32 h-32 border-l-2 border-b-2 border-emerald-400/40 opacity-60" />
-        <div className="absolute bottom-8 right-8 w-32 h-32 border-r-2 border-b-2 border-purple-400/40 opacity-60" />
+      {/* Flowing wave patterns */}
+      <div className="absolute inset-0 overflow-hidden">
+        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1200 800" preserveAspectRatio="none">
+          <path
+            d="M0,200 Q300,100 600,200 T1200,200 L1200,0 L0,0 Z"
+            fill="rgba(255, 215, 0, 0.05)"
+            style={{
+              transform: `translateX(${scrollY * -0.1}px)`,
+            }}
+          />
+          <path
+            d="M0,400 Q300,300 600,400 T1200,400 L1200,0 L0,0 Z"
+            fill="rgba(59, 130, 246, 0.03)"
+            style={{
+              transform: `translateX(${scrollY * 0.05}px)`,
+            }}
+          />
+          <path
+            d="M0,600 Q300,500 600,600 T1200,600 L1200,800 L0,800 Z"
+            fill="rgba(16, 185, 129, 0.04)"
+            style={{
+              transform: `translateX(${scrollY * -0.08}px)`,
+            }}
+          />
+        </svg>
         
-        {/* Elegant diagonal lines */}
-        <div className="absolute top-0 left-1/4 w-0.5 h-32 bg-gradient-to-b from-yellow-400/30 to-transparent transform rotate-12" />
-        <div className="absolute top-0 right-1/4 w-0.5 h-32 bg-gradient-to-b from-blue-400/30 to-transparent transform -rotate-12" />
-        <div className="absolute bottom-0 left-1/3 w-0.5 h-32 bg-gradient-to-t from-emerald-400/30 to-transparent transform -rotate-12" />
-        <div className="absolute bottom-0 right-1/3 w-0.5 h-32 bg-gradient-to-t from-purple-400/30 to-transparent transform rotate-12" />
-        
-        {/* Central ornamental pattern */}
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <div className="relative w-64 h-64">
-            <div className="absolute inset-0 border-2 border-yellow-400/20 rounded-full animate-spin" style={{ animationDuration: '30s' }} />
-            <div className="absolute inset-8 border border-blue-400/20 rounded-full animate-spin" style={{ animationDuration: '20s', animationDirection: 'reverse' }} />
-            <div className="absolute inset-16 border border-emerald-400/20 rounded-full animate-pulse" />
-          </div>
-        </div>
-        
-        {/* Side accent elements */}
-        <div className="absolute top-1/4 left-4 w-1 h-24 bg-gradient-to-b from-transparent via-yellow-400/40 to-transparent animate-pulse" />
-        <div className="absolute top-1/2 right-4 w-1 h-24 bg-gradient-to-b from-transparent via-blue-400/40 to-transparent animate-pulse" style={{ animationDelay: '1s' }} />
-        <div className="absolute bottom-1/4 left-8 w-1 h-24 bg-gradient-to-b from-transparent via-emerald-400/40 to-transparent animate-pulse" style={{ animationDelay: '2s' }} />
+        {/* Abstract color blobs */}
+        <div 
+          className="absolute top-20 left-1/4 w-96 h-96 rounded-full opacity-10 blur-3xl"
+          style={{
+            background: 'radial-gradient(circle, rgba(255, 215, 0, 0.3) 0%, transparent 70%)',
+            transform: `translate(${scrollY * 0.02}px, ${scrollY * -0.03}px) scale(${1 + scrollY * 0.0001})`
+          }}
+        />
+        <div 
+          className="absolute bottom-32 right-1/4 w-80 h-80 rounded-full opacity-15 blur-2xl"
+          style={{
+            background: 'radial-gradient(circle, rgba(139, 69, 19, 0.4) 0%, transparent 60%)',
+            transform: `translate(${scrollY * -0.03}px, ${scrollY * 0.02}px) scale(${1 + scrollY * 0.0001})`
+          }}
+        />
       </div>
       
       {/* Background logo with parallax effect */}
