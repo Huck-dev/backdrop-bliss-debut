@@ -18,67 +18,45 @@ const DynamicBackground = () => {
 
   return (
     <div className="fixed inset-0 -z-10">
-      {/* Enhanced dynamic background with animated gradients */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700" />
-      
-      {/* Animated gradient overlay */}
+      {/* Base background with animated gradient */}
       <div 
-        className="absolute inset-0 opacity-30"
+        className="absolute inset-0"
         style={{
           background: `
-            radial-gradient(circle at 20% 50%, hsl(var(--gold) / 0.1) 0%, transparent 50%),
-            radial-gradient(circle at 80% 20%, hsl(var(--primary) / 0.15) 0%, transparent 50%),
-            radial-gradient(circle at 40% 80%, hsl(var(--accent) / 0.1) 0%, transparent 50%)
+            linear-gradient(45deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #16213e 75%, #1a1a2e 100%),
+            radial-gradient(circle at ${20 + scrollY * 0.01}% ${30 + scrollY * 0.02}%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at ${80 - scrollY * 0.01}% ${70 - scrollY * 0.02}%, rgba(59, 130, 246, 0.08) 0%, transparent 60%)
           `,
-          animation: 'pulse 4s ease-in-out infinite alternate'
+          backgroundSize: '400% 400%, 100% 100%, 100% 100%',
+          animation: 'gradientShift 8s ease infinite'
         }}
       />
       
-      {/* Floating animated shapes */}
+      {/* Floating particles */}
       <div className="absolute inset-0">
-        {/* Large floating circle */}
-        <div 
-          className="absolute w-64 h-64 rounded-full opacity-5 border border-white/20"
-          style={{
-            top: '20%',
-            left: '10%',
-            transform: `translateY(${scrollY * -0.1}px)`,
-            animation: 'float 6s ease-in-out infinite'
-          }}
-        />
-        
-        {/* Medium floating diamond */}
-        <div 
-          className="absolute w-32 h-32 opacity-8 border border-gold/30 rotate-45"
-          style={{
-            top: '60%',
-            right: '15%',
-            transform: `translateY(${scrollY * 0.05}px) rotate(45deg)`,
-            animation: 'float 8s ease-in-out infinite reverse'
-          }}
-        />
-        
-        {/* Small floating squares */}
-        <div 
-          className="absolute w-16 h-16 opacity-10 border border-primary/40"
-          style={{
-            top: '30%',
-            right: '30%',
-            transform: `translateY(${scrollY * -0.08}px)`,
-            animation: 'float 5s ease-in-out infinite'
-          }}
-        />
-        
-        {/* Animated lines */}
-        <div 
-          className="absolute w-48 h-0.5 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-20"
-          style={{
-            top: '40%',
-            left: '60%',
-            transform: `translateX(${scrollY * 0.1}px)`,
-            animation: 'slideRight 10s linear infinite'
-          }}
-        />
+        {[...Array(12)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute rounded-full bg-white/20"
+            style={{
+              width: `${Math.random() * 4 + 2}px`,
+              height: `${Math.random() * 4 + 2}px`,
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              transform: `translateY(${scrollY * (Math.random() * 0.5 + 0.1)}px)`,
+              animation: `float ${Math.random() * 3 + 4}s ease-in-out infinite`,
+              animationDelay: `${Math.random() * 2}s`
+            }}
+          />
+        ))}
+      </div>
+      
+      {/* Geometric overlay patterns */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-20 left-20 w-32 h-32 border border-blue-400/30 rotate-45 animate-spin" style={{ animationDuration: '20s' }} />
+        <div className="absolute bottom-32 right-32 w-24 h-24 border border-yellow-400/40 animate-pulse" />
+        <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-gradient-to-r from-blue-500/20 to-transparent rounded-full animate-bounce" style={{ animationDuration: '3s' }} />
+        <div className="absolute top-1/3 right-1/4 w-20 h-1 bg-gradient-to-r from-transparent via-yellow-400/30 to-transparent animate-pulse" />
       </div>
       
       {/* Background logo with parallax effect */}
