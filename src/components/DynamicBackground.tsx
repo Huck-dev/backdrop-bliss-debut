@@ -21,7 +21,23 @@ const DynamicBackground = () => {
       {/* Base dark background */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700" />
       
-      {/* Subtle gold glow effects */}
+      {/* Background logo with parallax effect */}
+      <div 
+        className="absolute inset-0 flex items-center justify-center opacity-40"
+        style={{ 
+          transform: `translateY(${scrollY * 0.2}px)`,
+        }}
+      >
+        <div className="relative w-full max-w-4xl h-auto">
+          <img 
+            src="/lovable-uploads/db063a9f-c363-4ce9-ba3d-8b0274dc53f5.png" 
+            alt="Exotic Hauls Logo" 
+            className="w-full h-auto object-contain mx-auto"
+          />
+        </div>
+      </div>
+      
+      {/* Subtle gold and black glow effects */}
       <div className="absolute inset-0">
         {/* Top left gold glow */}
         <div 
