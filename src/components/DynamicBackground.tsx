@@ -32,31 +32,33 @@ const DynamicBackground = () => {
         }}
       />
       
-      {/* Floating particles */}
+      {/* Classic ornamental elements */}
       <div className="absolute inset-0">
-        {[...Array(12)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute rounded-full bg-white/20"
-            style={{
-              width: `${Math.random() * 4 + 2}px`,
-              height: `${Math.random() * 4 + 2}px`,
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              transform: `translateY(${scrollY * (Math.random() * 0.5 + 0.1)}px)`,
-              animation: `float ${Math.random() * 3 + 4}s ease-in-out infinite`,
-              animationDelay: `${Math.random() * 2}s`
-            }}
-          />
-        ))}
-      </div>
-      
-      {/* Geometric overlay patterns */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-20 left-20 w-32 h-32 border border-blue-400/30 rotate-45 animate-spin" style={{ animationDuration: '20s' }} />
-        <div className="absolute bottom-32 right-32 w-24 h-24 border border-yellow-400/40 animate-pulse" />
-        <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-gradient-to-r from-blue-500/20 to-transparent rounded-full animate-bounce" style={{ animationDuration: '3s' }} />
-        <div className="absolute top-1/3 right-1/4 w-20 h-1 bg-gradient-to-r from-transparent via-yellow-400/30 to-transparent animate-pulse" />
+        {/* Corner decorative elements */}
+        <div className="absolute top-8 left-8 w-32 h-32 border-l-2 border-t-2 border-yellow-400/40 opacity-60" />
+        <div className="absolute top-8 right-8 w-32 h-32 border-r-2 border-t-2 border-blue-400/40 opacity-60" />
+        <div className="absolute bottom-8 left-8 w-32 h-32 border-l-2 border-b-2 border-emerald-400/40 opacity-60" />
+        <div className="absolute bottom-8 right-8 w-32 h-32 border-r-2 border-b-2 border-purple-400/40 opacity-60" />
+        
+        {/* Elegant diagonal lines */}
+        <div className="absolute top-0 left-1/4 w-0.5 h-32 bg-gradient-to-b from-yellow-400/30 to-transparent transform rotate-12" />
+        <div className="absolute top-0 right-1/4 w-0.5 h-32 bg-gradient-to-b from-blue-400/30 to-transparent transform -rotate-12" />
+        <div className="absolute bottom-0 left-1/3 w-0.5 h-32 bg-gradient-to-t from-emerald-400/30 to-transparent transform -rotate-12" />
+        <div className="absolute bottom-0 right-1/3 w-0.5 h-32 bg-gradient-to-t from-purple-400/30 to-transparent transform rotate-12" />
+        
+        {/* Central ornamental pattern */}
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <div className="relative w-64 h-64">
+            <div className="absolute inset-0 border-2 border-yellow-400/20 rounded-full animate-spin" style={{ animationDuration: '30s' }} />
+            <div className="absolute inset-8 border border-blue-400/20 rounded-full animate-spin" style={{ animationDuration: '20s', animationDirection: 'reverse' }} />
+            <div className="absolute inset-16 border border-emerald-400/20 rounded-full animate-pulse" />
+          </div>
+        </div>
+        
+        {/* Side accent elements */}
+        <div className="absolute top-1/4 left-4 w-1 h-24 bg-gradient-to-b from-transparent via-yellow-400/40 to-transparent animate-pulse" />
+        <div className="absolute top-1/2 right-4 w-1 h-24 bg-gradient-to-b from-transparent via-blue-400/40 to-transparent animate-pulse" style={{ animationDelay: '1s' }} />
+        <div className="absolute bottom-1/4 left-8 w-1 h-24 bg-gradient-to-b from-transparent via-emerald-400/40 to-transparent animate-pulse" style={{ animationDelay: '2s' }} />
       </div>
       
       {/* Background logo with parallax effect */}
