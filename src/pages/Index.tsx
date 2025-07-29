@@ -18,22 +18,22 @@ const Index = () => {
       <section id="home">
         <Hero />
       </section>
-      <section id="services" className="bg-gradient-to-br from-card via-card to-muted/30 backdrop-blur-sm">
+      <section id="services" className="bg-white">
         <Services />
       </section>
-      <section id="about" className="bg-gradient-to-br from-muted/20 via-background to-card/50">
+      <section id="about">
         <About />
       </section>
-      <section id="gallery" className="bg-gradient-to-br from-card via-card to-muted/30 backdrop-blur-sm">
+      <section id="gallery" className="bg-white">
         <Gallery />
       </section>
-      <section id="testimonials" className="bg-gradient-to-br from-muted/20 via-background to-card/50">
+      <section id="testimonials">
         <Testimonials />
       </section>
-      <section id="faq" className="bg-gradient-to-br from-card via-card to-muted/30 backdrop-blur-sm">
+      <section id="faq" className="bg-white">
         <FAQ />
       </section>
-      <section id="contact" className="bg-gradient-to-br from-muted/20 via-background to-card/50">
+      <section id="contact">
         <Contact />
       </section>
       <Footer />
