@@ -105,7 +105,7 @@ const DynamicBackground = () => {
       
       {/* Background logo with parallax effect */}
       <div 
-        className="absolute inset-0 flex items-center justify-center opacity-40"
+        className="absolute inset-0 flex items-center justify-center opacity-60"
         style={{ 
           transform: `translateY(${scrollY * 0.2}px)`,
         }}
@@ -115,6 +115,10 @@ const DynamicBackground = () => {
             src="/lovable-uploads/db063a9f-c363-4ce9-ba3d-8b0274dc53f5.png" 
             alt="Exotic Hauls Logo" 
             className="w-full h-auto object-contain mx-auto"
+            style={{
+              mixBlendMode: 'screen',
+              filter: 'contrast(1.2) brightness(1.1)'
+            }}
           />
         </div>
       </div>
